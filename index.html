@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I LOVE U</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="envelope-wrapper">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>HoLizz.</strong>
-                        <p>
-                            No puedo evitar pensar en ti en cada momento. 
-                            Eres mi paz, mi inspiración y mi mayor alegría. 
-                            Cada segundo a tu lado me hace sentir afortunado de haberte encontrado, 
-                            como si el universo hubiera conspirado para unir nuestras almas<br>
-                            &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TE AMO ❤️
-                        </p>
-                    </div>
-                </div>
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <strong>HoLizz.</strong>
+              <p>
+                No puedo evitar pensar en ti en cada momento. Eres mi paz, mi
+                inspiración y mi mayor alegría. Cada segundo a tu lado me hace
+                sentir afortunado de haberte encontrado, como si el universo
+                hubiera conspirado para unir nuestras almas<br />
+                &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TE AMO ❤️
+              </p>
             </div>
-            <div class="heart"></div>
+          </div>
         </div>
+        <div class="heart"></div>
+      </div>
     </div>
-    <!-- <audio autoplay>
-        <source src="river.mp3" type="audio/mpeg">
-    </audio> -->
+    <audio id="audio" autoplay>
+      <source src="river.mp3" type="audio/mpeg" />
+    </audio>
     <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-        });
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+
+  
+      const audio = document.getElementById("audio");
+
+      
+      audio.volume = 0.2;
+
+      audio.addEventListener("timeupdate", function () {
+        if (audio.currentTime >= 30) {
+          audio.pause();
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
